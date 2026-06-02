@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro de Laptops</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="panel form-panel">
+        <h1>Registro de Laptops</h1>
+        <p class="subtitle">Ingresa los datos y guarda nuevas laptops en la base de datos.</p>
+
+        <form id="laptop-form" class="laptop-form">
+          <label for="name">Nombre</label>
+          <input id="name" name="name" type="text" placeholder="Ej: ThinkPad T14" required />
+
+          <label for="brand">Marca</label>
+          <input id="brand" name="brand" type="text" placeholder="Ej: Lenovo" />
+
+          <label for="ram">RAM (GB)</label>
+          <input id="ram" name="ram" type="number" min="1" placeholder="Ej: 16" />
+
+          <label for="storage">Almacenamiento (GB)</label>
+          <input id="storage" name="storage" type="number" min="1" placeholder="Ej: 512" />
+
+          <button type="submit" id="submit-btn">Guardar laptop</button>
+        </form>
+
+        <p id="message" class="message" aria-live="polite"></p>
+      </section>
+
+      <section class="panel list-panel">
+        <div class="list-header">
+          <h2>Laptops Registradas</h2>
+          <button id="refresh-btn" type="button">Actualizar</button>
+        </div>
+
+        <div class="search-bar">
+          <input
+            id="search-input"
+            type="search"
+            placeholder="Buscar por nombre o marca"
+            aria-label="Buscar laptops por nombre o marca"
+          />
+          <button id="clear-search-btn" type="button">Limpiar</button>
+        </div>
+
+        <ul id="laptops-list" class="laptops-list"></ul>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
